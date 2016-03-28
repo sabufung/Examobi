@@ -28,6 +28,7 @@ public class HelloController {
 
 	@RequestMapping(value = "/html", method = RequestMethod.GET)
 	public String index() {
+		String clgt = "sao dek lên";
 		String result = userService.getUserById(1).getName() + examService.getExamById(1).getName()
 				+ questionService.getQuestionById(1).getContent() + answerService.getAnswerById(1).getContent();
 		return result;
