@@ -1,12 +1,15 @@
 
 package hello;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import hello.answer.AnswerService;
+import hello.exam.ExamEntity;
 import hello.exam.ExamService;
 import hello.question.QuestionService;
 import hello.user.UserService;
@@ -27,10 +30,11 @@ public class HelloController {
 	AnswerService answerService;
 
 	@RequestMapping(value = "/html", method = RequestMethod.GET)
-	public String index() {
+	public List<ExamEntity> index() {
 		String clgt = "sao dek lên";
-		String result = userService.getUserById(1).getName() + examService.getExamById(1).getName()
-				+ questionService.getQuestionById(1).getContent() + answerService.getAnswerById(1).getContent();
+//		String result = userService.getUserById(1).getName() + examService.getExamById(1).getName()
+//				+ questionService.getQuestionById(1).getContent() + answerService.getAnswerById(1).getContent();
+		List<ExamEntity> result = examService.getAllByTestDoneAsc();
 		return result;
 	}
 

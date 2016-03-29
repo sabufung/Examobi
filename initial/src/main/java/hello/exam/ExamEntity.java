@@ -21,6 +21,9 @@ public class ExamEntity {
 
 	@Column(name = "level")
 	private int level;
+	
+	@Column(name = "testdone")
+	private int testDone;
 
 	public long getId() {
 		return id;
@@ -45,10 +48,20 @@ public class ExamEntity {
 	public void setLevel(int level) {
 		this.level = level;
 	}
+	
+
+	public int getTestDone() {
+		return testDone;
+	}
+
+	public void setTestDone(int testDone) {
+		this.testDone = testDone;
+	}
 
 	public void setData(ExamEntity data) {
 		this.id = data.id;
 		this.name = data.name;
 		this.level = data.level;
+		this.testDone = data.testDone;
 	}
 }

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Service;
 public interface UserService {
 	public UserEntity getUserById(long id);
 	public UserEntity getUserByNameAndPassword(String username,String password);
+	public long countUser();
 }

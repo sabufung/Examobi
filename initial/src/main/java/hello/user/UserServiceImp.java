@@ -20,4 +20,9 @@ public class UserServiceImp implements UserService {
 		return repository.findByNameAndPassword(username, password);
 	}
 
+	@Override
+	public long countUser() {
+		return repository.count();
+	}
+
 }
