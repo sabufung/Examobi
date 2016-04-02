@@ -22,6 +22,17 @@ public class AnswerEntity {
 	@Column(name = "is_correct")
 	private boolean isCorrect;
 
+	@Column(name = "question_id")
+	private long questionID;
+	
+	public long getQuestionID() {
+		return questionID;
+	}
+
+	public void setQuestionID(long questionID) {
+		this.questionID = questionID;
+	}
+
 	public String getContent() {
 		return content;
 	}
@@ -50,5 +61,6 @@ public class AnswerEntity {
 		this.id = data.id;
 		this.content = data.content;
 		this.isCorrect = data.isCorrect;
+		this.questionID = data.questionID;
 	}
 }
